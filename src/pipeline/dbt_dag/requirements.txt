@@ -1,0 +1,13 @@
+# Astro Runtime includes the following pre-installed providers packages: https://www.astronomer.io/docs/astro/runtime-image-architecture#provider-packages
+astronomer-cosmos
+astronomer-cosmos[docker]
+snowflake-connector-python[pandas]
+apache-airflow-providers-snowflake
+fuzzywuzzy
+pyperclip
+tqdm
+seaborn
+matplotlib
+scikit-learn==1.5.1
+scipy
+xgboost>=2.1.1

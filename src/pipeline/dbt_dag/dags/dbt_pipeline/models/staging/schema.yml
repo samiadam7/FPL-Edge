@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: players
+    description: "Cleaned player data with auto-incrementing IDs."
+    columns:
+      - name: player_id
+        description: "Unique auto-incrementing identifier for players."
+        tests:
+          - unique
+          - not_null
+
+  - name: teams
+    description: "Cleaned team data with auto-incrementing IDs."
+    columns:
+      - name: team_id
+        description: "Unique auto-incrementing identifier for teams."
+        tests:
+          - unique
+          - not_null
+
+  - name: fixtures
+    description: "Cleaned fixtures data with auto-incrementing IDs."
+    columns:
+      - name: fix_id
+        description: "Unique auto-incrementing identifier for fixtures."
+        tests:
+          - unique
+          - not_null
+
+  - name: plays
+    description: "Links players to teams with start and end dates for their tenure."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+        tests:
+          - not_null
+      - name: team_id
+        description: "Unique identifier for the team."
+        tests:
+          - not_null
+      - name: start_date
+        description: "Start date of the player's tenure with the team."
+        tests:
+          - not_null
+      - name: end_date
+        description: "End date of the player's tenure with the team."
+
+  - name: fpl_player
+    description: "Links players to their Fantasy Premier League position and season."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+        tests:
+          - not_null
+          # - unique
+      - name: position
+        description: "The player's position in the Fantasy Premier League."
+      - name: season
+        description: "The season for which the player data is relevant."
+        tests:
+          - not_null
+
+  - name: real_performance
+    description: "Detailed performance data for players in fixtures."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+        tests:
+          - not_null
+      - name: fix_id
+        description: "Unique identifier for the fixture."
+        tests:
+          - not_null

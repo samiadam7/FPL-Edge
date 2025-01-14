@@ -1,0 +1,50 @@
+version: 2
+sources:
+  - name: fpl_db
+    database: fpl_database
+    schema: dbt_schema
+    
+    tables:
+      - name: raw_compiled_ids
+        columns:
+          - name: id_fbref
+            tests:
+              - unique
+              - not_null
+      - name: raw_team_data
+        columns:
+          - name: season
+            tests:
+              - not_null
+      - name: raw_fixtures
+        columns:
+          - name: season
+            tests:
+              - not_null
+      - name: raw_fpl_performance
+        columns:
+          - name: season
+            tests:
+              - not_null
+      - name: raw_players_clean
+        columns:
+          - name: season
+            tests:
+              - not_null
+      - name: raw_real_perf
+        columns:
+          - name: season
+            tests:
+              - not_null
+      - name: fct_new_gw_predictions
+        columns:
+          - name: prediction_id
+            tests:
+              - not_null
+              - unique
+      - name: fct_prev_gw_predictions
+        columns:
+          - name: prediction_id
+            tests:
+              - not_null
+              - unique

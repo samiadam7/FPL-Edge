@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# DotEnv configuration
+.env
+
+# Pipeline configuration
+*.conf
+./src/pipeline/dbt_dag/include/data/utils/pipeline.conf
+
+# Database
+*.db
+*.rdb
+
+# Extra Files
+*.csv
+*.pkl

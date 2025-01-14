@@ -1,0 +1,12 @@
+astronomer-cosmos
+astronomer-cosmos[docker]
+snowflake-connector-python[pandas]
+apache-airflow-providers-snowflake
+fuzzywuzzy
+pyperclip
+tqdm
+seaborn
+matplotlib
+scikit-learn==1.5.1
+scipy
+xgboost>=2.1.1
