@@ -20,7 +20,7 @@ The goal of this project is to assist FPL managers in optimizing their fantasy f
 - Save time through automated data updates and predictions.
 - Enhance strategic planning with data visualizations.
 
-For more information, please check out this [presentation](FPL Presentation.pdf).
+For more information, please check out this [presentation](FPL_Presentation.pdf).
 
 ## Technical Architecture
 
