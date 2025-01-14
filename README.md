@@ -30,13 +30,13 @@ The system is designed using a modern data engineering stack with the following 
 
 1. **Data Collection:**
 
-   - [Data Collection Code](./src/data/collect_data.py)
+   - [Data Collection Code](./src/pipeline/dbt_dag/include/data/collect_data)
    - **Source:** FBref for in-game statistics and FPL for fantasy data.
    - **Scraping:** BeautifulSoup and Requests for automated data extraction.
 
 2. **Data Storage:**
    
-   - [Data Storage Code](./src/data/utils.py)
+   - [Data Storage Code](./src/pipeline/dbt_dag/include/data/utils)
    - **Storage:** Snowflake Data Warehouse.
    - **Format:** Raw data and cleaned datasets stored in structured tables.
 
@@ -76,11 +76,11 @@ The system is designed using a modern data engineering stack with the following 
 
 ## Project Progress Checklist
 
-- ✅ **Connect to Snowflake in the [train_model.py](./src/pipeline/dbt_dag/dags/dbt_pipeline/models/train_model.py)`**
+- ✅ **Connect to Snowflake in the [train_model.py](./src/pipeline/dbt_dag/include/models/train_model.py)**
 - ✅ **Implement Training DAG**
 - ✅ **Create Upcoming Gameweek Table in Snowflake**
 - ✅ **Export Predictions to Snowflake**
-- ✅ **Implement Prediction Logic in [prediction_model.py](./src/pipeline/dbt_dag/dags/dbt_pipeline/models/predict_model.py)**
+- ✅ **Implement Prediction Logic in [prediction_model.py](./src/pipeline/dbt_dag/include/models/predict_model.py)**
 - ✅ **Integrate Predictions into Main DAG**
 - ✅ **Define a Business Metric for Model Evaluation**
 - ❌ **Create Dashboard for Data-Driven Decision Making**
@@ -117,7 +117,7 @@ The project plans to evaluate predictions based on a tangible business metric th
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/samiadam7/FPL-Edge/
    ```
 2. **Set Up Environment:**
    - Configure Snowflake credentials.
