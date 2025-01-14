@@ -29,31 +29,31 @@ For more information, please check out this [presentation](FPL_Presentation.pdf)
 The system is designed using a modern data engineering stack with the following components:
 
 1. **Data Collection:**
-   `./src/pipeline/dbt_dag/include/data/collect_data`
 
+   - [Data Collection Code](./src/data/collect_data.py)
    - **Source:** FBref for in-game statistics and FPL for fantasy data.
    - **Scraping:** BeautifulSoup and Requests for automated data extraction.
 
 2. **Data Storage:**
-   `./src/pipeline/dbt_dag/include/data/utils`
-
+   
+   - [Data Storage Code](./src/data/utils.py)
    - **Storage:** Snowflake Data Warehouse.
    - **Format:** Raw data and cleaned datasets stored in structured tables.
 
 3. **Data Pipeline:**
-   `./src/pipeline/dbt_dag/dags`
-
+   
+   - [Pipeline DAG](./src/pipeline/dbt_dag/dags)
    - **Orchestration:** Apache Airflow with Docker.
    - **Workflow:** Separate DAGs for data ingestion and model training.
 
 4. **Data Transformation:**
-   `./src/pipeline/dbt_dag/dags/dbt_pipeline/models`
-
+   
+   - [DBT Models](./src/pipeline/dbt_dag/dags/dbt_pipeline/models)
    - **DBT (Data Build Tool):** Used for data cleaning and transformation.
 
 5. **Machine Learning:**
-   `./src/pipeline/dbt_dag/include/models`
-
+   
+   - [ML Models](./src/pipeline/dbt_dag/include/models)
    - **Model:** Regression model for player points prediction.
    - **Pipeline:** Training DAG to retrain models when performance drops below a threshold.
 
@@ -76,14 +76,14 @@ The system is designed using a modern data engineering stack with the following 
 
 ## Project Progress Checklist
 
-✅ **Connect to Snowflake in the `train_model.py`**
-✅ **Implement Training DAG**
-✅ **Create Upcoming Gameweek Table in Snowflake**
-✅ **Export Predictions to Snowflake**
-✅ **Implement Prediction Logic in `prediction_model.py`**
-✅ **Integrate Predictions into Main DAG**
-✅ **Define a Business Metric for Model Evaluation**
-❌ **Create Dashboard for Data-Driven Decision Making**
+- ✅ **Connect to Snowflake in the [train_model.py](./src/pipeline/dbt_dag/dags/dbt_pipeline/models/train_model.py)`**
+- ✅ **Implement Training DAG**
+- ✅ **Create Upcoming Gameweek Table in Snowflake**
+- ✅ **Export Predictions to Snowflake**
+- ✅ **Implement Prediction Logic in [prediction_model.py](./src/pipeline/dbt_dag/dags/dbt_pipeline/models/predict_model.py)**
+- ✅ **Integrate Predictions into Main DAG**
+- ✅ **Define a Business Metric for Model Evaluation**
+- ❌ **Create Dashboard for Data-Driven Decision Making**
 
 ---
 
